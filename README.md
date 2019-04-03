@@ -1,5 +1,8 @@
 # flutter_bloc_example
 
+Thanks to the original develper.  TO understand more, I have built my changes and features on top of this architecture and have added the search option with location to integrate with Github Jobs. 
+
+
 A new Flutter project using BLoC pattern and fetching data from Github jobs API.
 
 ## Used Packages
