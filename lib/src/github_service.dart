@@ -23,4 +23,18 @@ class GithubService{
       return throw Exception('Unable to connect with server');
     }
   }
+
+  Future<List<JobPositionModel>> viewJob(String id) async{
+
+    final String url = 'https://jobs.github.com/positions.json?id=$id';
+    var r = await http.get(url);
+
+    if(r.statusCode == 200 || r.statusCode == 210){
+      Iterable data = List.from(json.decode(r.body));
+      List<JobPositionModel> result = data.map( (json) => JobPositionModel.fromJson(json)).toList();
+      return result;
+    }else{
+      return throw Exception('Unable to connect with server');
+    }
+  }
 }
